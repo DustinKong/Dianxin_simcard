@@ -14,7 +14,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/api/count', methods=['POST'])
+@app.route('/api/count_a', methods=['POST'])
 def count():
     """
     :return:计数结果/清除结果
@@ -74,7 +74,7 @@ def count_b():
 
     # 执行自增操作
     if action == 'inc':
-        counter = query_counterbyid(1)
+        counter = query_counterbyid(2)
         if counter is None:
             counter = Counters()
             counter.id = 2
@@ -99,7 +99,7 @@ def count_b():
         return make_err_response('action参数错误')
 
 
-@app.route('/api/count', methods=['GET'])
+@app.route('/api/count_a', methods=['GET'])
 def get_count():
     """
     :return: 计数的值
