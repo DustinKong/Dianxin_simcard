@@ -56,7 +56,7 @@ def count():
     else:
         return make_err_response('action参数错误')
 
-@app.route('/api/count_school_b', methods=['POST'])
+@app.route('/api/count_b', methods=['POST'])
 def count_b():
     """
     :return:计数结果/清除结果
@@ -107,8 +107,8 @@ def get_count():
     counter = Counters.query.filter(Counters.id == 1).first()
     return make_succ_response(0) if counter is None else make_succ_response(counter.count)
 
-@app.route('/api/count_school_b', methods=['GET'])
-def get_count():
+@app.route('/api/count_b', methods=['GET'])
+def get_count_b():
     """
     :return: 计数的值
     """
